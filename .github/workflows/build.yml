@@ -1,0 +1,28 @@
+name: PEVO Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build_windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalar Zig
+        uses: mlugg/setup-zig@v1
+        with:
+          version: master
+
+      - name: Compilar PEVO
+        run: zig build -Doptimize=ReleaseSafe
+
+      - name: Upload do Executável
+        uses: actions/upload-artifact@v4
+        with:
+          name: pevo-windows-x64
+          path: zig-out/bin/pevo.exe
