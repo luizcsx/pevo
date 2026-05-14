@@ -16,14 +16,9 @@ pub fn main() !void {
             \\Codificador: Luiz Miguel
             \\Créditos: Equipe SATURNO
             \\
-            \\—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—
-            \\██████╗░░░░███████╗░░░██╗░░░██╗░░░░█████╗░░░░
-            \\██╔══██╗░░░██╔════╝░░░██║░░░██║░░░██╔══██╗░░░
-            \\██████╔╝░░░█████╗░░░░░╚██╗░██╔╝░░░██║░░██║░░░
-            \\██╔═══╝░░░░██╔══╝░░░░░░╚████╔╝░░░░██║░░██║░░░
-            \\██║░░░░░██╗███████╗██╗░░╚██╔╝░░██╗╚█████╔╝██╗
-            \\╚═╝░░░░░╚═╝╚══════╝╚═╝░░░╚═╝░░░╚═╝░╚════╝░╚═╝
-            \\—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—
+            \\----------------------------------------------
+            \\   PEVO - PROJETO EDUCABORAI OFFLINE
+            \\----------------------------------------------
             \\
             \\Instalacao concluida com sucesso! [cite: 1]
             \\Para comecar a usar o PEVO, use os comandos abaixo. [cite: 2]
@@ -35,13 +30,13 @@ pub fn main() !void {
 
     const comando = args[1];
 
-    if (std.mem.eql(u8, comando, "help")) {
-        try stdout.print("\nCOMANDOS DISPONIVEIS\n•-•-•-•-•-•-•-•-•-•-\n", .{}); [cite: 7]
+    if (std.mem.eql(u8, comando, "help")) { [cite: 7]
+        try stdout.print("\nCOMANDOS DISPONIVEIS\n", .{}); [cite: 7]
         try exibirHelp(stdout);
-    } else if (std.mem.eql(u8, comando, "fund")) {
-        try stdout.print("\nModo Ensino Fundamental ativado.\n", .{}); [cite: 4]
-    } else if (std.mem.eql(u8, comando, "medio")) {
-        try stdout.print("\nModo Ensino Medio ativado.\n", .{}); [cite: 5]
+    } else if (std.mem.eql(u8, comando, "fund")) { [cite: 4, 8]
+        try stdout.print("\nIniciando no modo de Ensino Fundamental.\n", .{}); [cite: 4, 8]
+    } else if (std.mem.eql(u8, comando, "medio")) { [cite: 5, 9]
+        try stdout.print("\nIniciando no modo de Ensino Medio.\n", .{}); [cite: 5, 9]
     } else {
         try stdout.print("\nATENCAO: Este comando nao existe. Para ajuda, digite 'pevo help'.\n", .{}); [cite: 6]
     }
@@ -49,22 +44,19 @@ pub fn main() !void {
 
 fn exibirHelp(writer: anytype) !void {
     try writer.print(
-        \\-•-•- MATERIAS -•-•-
-        \\
+        \\-•-•- MATERIAS -•-•- [cite: 3]
         \\  pevo --port = Lingua Portuguesa [cite: 3]
         \\  pevo --math = Matematica [cite: 3]
         \\  pevo --sci = Ciencias [cite: 3]
         \\  pevo --hist = Historia [cite: 3]
-        \\  pevo --geo = Geografia [cite: 3]
         \\
-        \\-•-•- AJUDA -•-•-
-        \\
-        \\  pevo help = Abre o menu de ajuda. [cite: 3]
-        \\  pevo fund = Ensino Fundamental. [cite: 4]
-        \\  pevo medio = Ensino Medio. [cite: 5]
+        \\-•-•- AJUDA -•-•- [cite: 3]
+        \\  pevo help = Abre o menu de ajuda. [cite: 3, 7]
+        \\  pevo fund = Ensino Fundamental. [cite: 4, 8]
+        \\  pevo medio = Ensino Medio. [cite: 5, 9]
         \\
         \\Feito pela equipe do Projeto Educaborai. [cite: 6]
-        \\—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—•—
+        \\----------------------------------------------
         \\
     , .{});
 }
